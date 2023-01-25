@@ -1,0 +1,52 @@
+<div class="general">
+  <form #myForm="ngForm" (ngSubmit)="envoyer()">
+    <section>
+      <label for="name" class="para">Le nom : </label>
+      <div *ngIf="name.touched && name.errors && name.errors?.['required']">
+        <p>Le nom est requis</p>
+      </div>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="pokemonAdded.name"
+        #name="ngModel"
+        required
+      />
+    </section>
+
+    <section>
+      <label for="image" class="para">URL : </label>
+      <div *ngIf="image.touched && image.errors && image.errors?.['required']">
+        <p>L'url de l'image est requise</p>
+      </div>
+      <input
+        type="text"
+        id="image"
+        name="image"
+        [(ngModel)]="pokemonAdded.image"
+        #image="ngModel"
+        required
+      />
+    </section>
+
+    <!-- <section>
+      <label for="description" class="para">Description : </label>
+      <div
+        *ngIf="description.touched && description.errors && description.errors?.['required']"
+      >
+        <p>La description du pokemon est requise</p>
+      </div>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="pokemonAdded.description"
+        #description="ngModel"
+        required
+      />
+    </section> -->
+
+    <button type="submit" *ngIf="myForm.valid">Ajouter</button>
+  </form>
+</div>

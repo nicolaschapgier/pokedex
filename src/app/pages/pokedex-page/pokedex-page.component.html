@@ -1,0 +1,4 @@
+<app-pokemon-list [pokemonChildData]="pokemonParentData" (pokemonEmitFromChild)="pokemonEmitReceiveFromChild($event)"></app-pokemon-list>
+<app-pokemon-detail [pokemonButtonDescription]="pokemonDescription"></app-pokemon-detail>
+<button routerLink="create">Aller créer un pokemon</button>
+<router-outlet></router-outlet>
